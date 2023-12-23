@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorPrimaryVariant"
+    tools:context=".usermenu.OrderDetailFragment">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
+        android:id="@+id/toolbar"
+        app:titleTextColor="@color/white"
+        tools:ignore="MissingConstraints"
+        app:title="Detail Pesanan"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="72dp"
+
+        android:id="@+id/cv_ticket_info"
+        app:cardCornerRadius="8dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+
+            android:id="@+id/ll_destination_and_origin"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="16dp">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="0dp"
+
+                    android:id="@+id/iv_route"
+
+                    app:layout_constraintTop_toTopOf="@id/ll_station"
+                    app:layout_constraintBottom_toBottomOf="@id/ll_station"
+                    app:layout_constraintStart_toEndOf="@id/ll_station"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+
+                    android:id="@+id/ll_time"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Asal"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Tujuan"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+
+                    android:id="@+id/ll_station"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ll_time">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:id="@+id/tv_origin"
+                        android:text="Stasiun 1"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:id="@+id/tv_destination"
+                        android:text="Stasiun 2"
+                        android:textSize="24sp" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_weight="2"
+
+                android:id="@+id/ll_important_info"
+                android:background="@color/grey_1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="center"
+
+                    android:text="Tidak Bisa Refund"
+                    android:textColor="@color/success"
+                    android:drawableStart="@drawable/ic_info"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="center"
+
+                    android:text="Tidak Bisa Reschedule"
+                    android:textColor="@color/success"
+                    android:drawableStart="@drawable/ic_info"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="32dp"
+        android:paddingHorizontal="32dp"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+
+        android:id="@+id/ll_order_detail"
+        android:background="@color/white"
+
+        app:layout_constraintTop_toBottomOf="@id/cv_ticket_info"
+        app:layout_constraintBottom_toTopOf="@id/cl_sum_info"
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Pilih Jadwal"
+            android:textColor="@color/black"/>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="24dp"
+            style="@style/customEditText2"
+
+            android:id="@+id/et_datetime"
+            android:inputType="datetime"
+            android:hint="Tanggal dan Waktu"
+            android:focusable="false" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Pilih Kelas"
+            android:textColor="@color/black"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="24dp"
+            style="@style/customEditText2"
+
+            android:id="@+id/et_class" />
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="24dp"
+        android:orientation="horizontal"
+
+        android:id="@+id/cl_sum_info"
+        android:background="@color/white"
+        android:elevation="16dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            android:id="@+id/ll_price_info"
+
+            app:layout_constraintTop_toTopOf="@id/cl_sum_info"
+            app:layout_constraintBottom_toBottomOf="@id/cl_sum_info"
+            app:layout_constraintStart_toStartOf="@id/cl_sum_info">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Total harga tiket"
+                android:textColor="@color/grey_3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/tv_total_price"
+                android:text="Rp 0"
+                android:textColor="@color/orange_1"
+                android:textStyle="bold"
+                android:textSize="24sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Termasuk Pajak"
+                android:textColor="@color/grey_3"/>
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingHorizontal="16dp"
+            style="@style/customButton2"
+
+            android:id="@+id/btn_order"
+            android:text="Pesan Sekarang"
+
+            app:layout_constraintTop_toTopOf="@id/cl_sum_info"
+            app:layout_constraintBottom_toBottomOf="@id/cl_sum_info"
+            app:layout_constraintEnd_toEndOf="@id/cl_sum_info"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
